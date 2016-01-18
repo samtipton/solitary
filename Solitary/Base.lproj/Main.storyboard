@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,19 +15,155 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="BoardView" customModule="Solitary" customModuleProvider="target">
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="BoardView" customModule="Solitary" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vd2-jZ-rRS" customClass="CardPileView" customModule="Solitary" customModuleProvider="target">
+                                <rect key="frame" x="31" y="41" width="70" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="PrS-xZ-Flq"/>
+                                    <constraint firstAttribute="width" secondItem="Vd2-jZ-rRS" secondAttribute="height" multiplier="5:7" id="olR-Vg-kv0"/>
+                                </constraints>
+                            </view>
+                            <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ovK-Nq-jtE" customClass="CardPileView" customModule="Solitary" customModuleProvider="target">
+                                <rect key="frame" x="109" y="41" width="70" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="ksw-LU-vPJ"/>
+                                    <constraint firstAttribute="width" secondItem="ovK-Nq-jtE" secondAttribute="height" multiplier="5:7" id="pjb-Aw-QzW"/>
+                                </constraints>
+                            </view>
+                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1f-0r-grM" customClass="CardPileView" customModule="Solitary" customModuleProvider="target">
+                                <rect key="frame" x="187" y="41" width="70" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="0KN-vk-z6I"/>
+                                    <constraint firstAttribute="width" secondItem="e1f-0r-grM" secondAttribute="height" multiplier="5:7" id="lRp-Tm-APa"/>
+                                </constraints>
+                            </view>
+                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJ7-WR-js3" customClass="CardPileView" customModule="Solitary" customModuleProvider="target">
+                                <rect key="frame" x="265" y="41" width="70" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="HXJ-di-7Dq"/>
+                                    <constraint firstAttribute="width" secondItem="cJ7-WR-js3" secondAttribute="height" multiplier="5:7" id="KSl-0E-MHe"/>
+                                </constraints>
+                            </view>
+                            <view tag="12" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cv1-5G-tSM" customClass="CardPileView" customModule="Solitary" customModuleProvider="target">
+                                <rect key="frame" x="31" y="166" width="70" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="1zo-Br-bXQ"/>
+                                    <constraint firstAttribute="width" secondItem="cv1-5G-tSM" secondAttribute="height" multiplier="5:7" id="IO4-se-YgY"/>
+                                </constraints>
+                            </view>
+                            <view tag="11" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SXX-Fy-oIP" customClass="CardPileView" customModule="Solitary" customModuleProvider="target">
+                                <rect key="frame" x="109" y="166" width="70" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Oa3-0H-fDb"/>
+                                    <constraint firstAttribute="width" secondItem="SXX-Fy-oIP" secondAttribute="height" multiplier="5:7" id="yID-EJ-s38"/>
+                                </constraints>
+                            </view>
+                            <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8rd-7W-PvG" customClass="CardPileView" customModule="Solitary" customModuleProvider="target">
+                                <rect key="frame" x="187" y="166" width="70" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8rd-7W-PvG" secondAttribute="height" multiplier="5:7" id="Mba-P1-zuJ"/>
+                                    <constraint firstAttribute="width" constant="70" id="ice-TG-PiA"/>
+                                </constraints>
+                            </view>
+                            <view tag="9" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T4E-hV-Dmp" customClass="CardPileView" customModule="Solitary" customModuleProvider="target">
+                                <rect key="frame" x="265" y="166" width="70" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="T4E-hV-Dmp" secondAttribute="height" multiplier="5:7" id="akq-Sw-nT1"/>
+                                    <constraint firstAttribute="width" constant="70" id="uUV-zm-qn9"/>
+                                </constraints>
+                            </view>
+                            <view tag="8" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5I-Yn-xXK" customClass="CardPileView" customModule="Solitary" customModuleProvider="target">
+                                <rect key="frame" x="343" y="166" width="70" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="PEN-zQ-Pou"/>
+                                    <constraint firstAttribute="width" secondItem="H5I-Yn-xXK" secondAttribute="height" multiplier="5:7" id="UfG-Od-xnG"/>
+                                </constraints>
+                            </view>
+                            <view tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFW-vW-2Of" customClass="CardPileView" customModule="Solitary" customModuleProvider="target">
+                                <rect key="frame" x="421" y="166" width="70" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lFW-vW-2Of" secondAttribute="height" multiplier="5:7" id="FwI-ei-OoL"/>
+                                    <constraint firstAttribute="width" constant="70" id="jzp-pw-gGY"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uiS-fS-2q8" customClass="CardPileView" customModule="Solitary" customModuleProvider="target">
+                                <rect key="frame" x="499" y="41" width="70" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="c92-Q4-cRM"/>
+                                    <constraint firstAttribute="width" secondItem="uiS-fS-2q8" secondAttribute="height" multiplier="5:7" id="r3d-EK-2JD"/>
+                                </constraints>
+                            </view>
+                            <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fm9-Bf-YFQ" customClass="CardPileView" customModule="Solitary" customModuleProvider="target">
+                                <rect key="frame" x="499" y="166" width="70" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Fm9-Bf-YFQ" secondAttribute="height" multiplier="5:7" id="f7S-0R-sO4"/>
+                                    <constraint firstAttribute="width" constant="70" id="wbt-sa-S6J"/>
+                                </constraints>
+                            </view>
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bxv-Lk-Zrf" customClass="CardPileView" customModule="Solitary" customModuleProvider="target">
+                                <rect key="frame" x="421" y="41" width="70" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="eMQ-2m-V6h"/>
+                                    <constraint firstAttribute="width" secondItem="Bxv-Lk-Zrf" secondAttribute="height" multiplier="5:7" id="vb8-5V-7D3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="ovK-Nq-jtE" firstAttribute="leading" secondItem="Vd2-jZ-rRS" secondAttribute="trailing" constant="8" id="0YN-e5-ypB"/>
+                            <constraint firstItem="uiS-fS-2q8" firstAttribute="leading" secondItem="Bxv-Lk-Zrf" secondAttribute="trailing" constant="8" id="0Z4-kA-agR"/>
+                            <constraint firstItem="Bxv-Lk-Zrf" firstAttribute="top" secondItem="cJ7-WR-js3" secondAttribute="top" id="JZT-ob-t96"/>
+                            <constraint firstItem="SXX-Fy-oIP" firstAttribute="leading" secondItem="cv1-5G-tSM" secondAttribute="trailing" constant="8" id="LhB-SP-Aqg"/>
+                            <constraint firstItem="H5I-Yn-xXK" firstAttribute="top" secondItem="lFW-vW-2Of" secondAttribute="top" id="M0C-iC-vlu"/>
+                            <constraint firstItem="lFW-vW-2Of" firstAttribute="leading" secondItem="H5I-Yn-xXK" secondAttribute="trailing" constant="8" id="Oej-PW-7NO"/>
+                            <constraint firstItem="e1f-0r-grM" firstAttribute="leading" secondItem="ovK-Nq-jtE" secondAttribute="trailing" constant="8" id="P0H-Pn-Vl1"/>
+                            <constraint firstItem="cJ7-WR-js3" firstAttribute="leading" secondItem="e1f-0r-grM" secondAttribute="trailing" constant="8" id="R7O-FG-xyg"/>
+                            <constraint firstItem="Bxv-Lk-Zrf" firstAttribute="leading" secondItem="cJ7-WR-js3" secondAttribute="trailing" constant="86" id="RVX-NF-ckg"/>
+                            <constraint firstItem="8rd-7W-PvG" firstAttribute="leading" secondItem="SXX-Fy-oIP" secondAttribute="trailing" constant="8" id="SdL-ee-B4d"/>
+                            <constraint firstItem="SXX-Fy-oIP" firstAttribute="top" secondItem="8rd-7W-PvG" secondAttribute="top" id="Wex-2J-W5K"/>
+                            <constraint firstItem="H5I-Yn-xXK" firstAttribute="leading" secondItem="T4E-hV-Dmp" secondAttribute="trailing" constant="8" id="Z7r-Us-4Mn"/>
+                            <constraint firstItem="cJ7-WR-js3" firstAttribute="top" secondItem="e1f-0r-grM" secondAttribute="top" id="ZGt-zs-ebN"/>
+                            <constraint firstItem="cv1-5G-tSM" firstAttribute="top" secondItem="SXX-Fy-oIP" secondAttribute="top" id="bD9-TA-YRg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uiS-fS-2q8" secondAttribute="trailing" id="dQm-PU-2o8"/>
+                            <constraint firstItem="T4E-hV-Dmp" firstAttribute="top" secondItem="H5I-Yn-xXK" secondAttribute="top" id="dWa-bu-q6i"/>
+                            <constraint firstItem="T4E-hV-Dmp" firstAttribute="leading" secondItem="8rd-7W-PvG" secondAttribute="trailing" constant="8" id="dYs-qZ-qCy"/>
+                            <constraint firstItem="ovK-Nq-jtE" firstAttribute="top" secondItem="Vd2-jZ-rRS" secondAttribute="top" id="gfZ-hy-Daf"/>
+                            <constraint firstItem="8rd-7W-PvG" firstAttribute="top" secondItem="T4E-hV-Dmp" secondAttribute="top" id="hvl-9Q-z6i"/>
+                            <constraint firstItem="Fm9-Bf-YFQ" firstAttribute="top" secondItem="uiS-fS-2q8" secondAttribute="bottom" constant="27" id="je2-bt-8ag"/>
+                            <constraint firstItem="Vd2-jZ-rRS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="ll9-dr-ZI8"/>
+                            <constraint firstItem="lFW-vW-2Of" firstAttribute="top" secondItem="Fm9-Bf-YFQ" secondAttribute="top" id="ojo-Dw-LM9"/>
+                            <constraint firstItem="Fm9-Bf-YFQ" firstAttribute="trailing" secondItem="uiS-fS-2q8" secondAttribute="trailing" id="pfw-xD-UsQ"/>
+                            <constraint firstItem="Fm9-Bf-YFQ" firstAttribute="leading" secondItem="lFW-vW-2Of" secondAttribute="trailing" constant="8" id="vDt-5K-GU3"/>
+                            <constraint firstItem="uiS-fS-2q8" firstAttribute="top" secondItem="Bxv-Lk-Zrf" secondAttribute="top" id="we2-ot-aXg"/>
+                            <constraint firstItem="cJ7-WR-js3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xD7-0K-OeU"/>
+                            <constraint firstItem="e1f-0r-grM" firstAttribute="top" secondItem="ovK-Nq-jtE" secondAttribute="top" id="xW4-aZ-4r7"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="boardColor">
                                 <color key="value" red="0.091897793114185333" green="0.66514235734939575" blue="0.1257922351360321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dQm-PU-2o8"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="lLR-tF-8Eg" appends="YES" id="qhj-Qi-zlP"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="lLR-tF-8Eg">
+                    <connections>
+                        <action selector="boardTap:" destination="BYZ-38-t0r" id="fBb-UY-i5B"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="245" y="337"/>
         </scene>
     </scenes>
 </document>

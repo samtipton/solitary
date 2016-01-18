@@ -6,50 +6,79 @@
 //  Copyright © 2016 samtipton. All rights reserved.
 //
 
-protocol PlayablePile {
-    func addCard(card:Card) -> Bool
-    func addCards(cards:[Card]) -> Bool
-    func takeCard() -> Card
-    func takeTopCards(n: Int) -> [Card]
-    func count () -> Int
+import Darwin
+
+protocol SolitaireCardPile {
+    func canAccept(cards:CardPile) -> Bool
 }
 
-class BasePile : PlayablePile {
-    var _cards: [Card] = []
-    
-    internal init() {}
-    
-    func addCard(card:Card) -> Bool {
-        return false
-    }
-    func addCards(cards:[Card]) -> Bool {
-        return false
-    }
-    func takeCard() -> Card {
-        return _cards.removeLast()
-    }
-    func takeTopCards(n: Int) -> [Card] {
-        let top = [Card](_cards[n..<_cards.count])
-        _cards.removeRange(n..._cards.count - 1)
-        return top
-    }
-    func count () -> Int {
-        return _cards.count
+extension Array {
+    func shuffled() -> [Element] {
+        if count < 2 { return self }
+        var list = self
+        for i in 0..<(list.count - 1) {
+            let j = Int(arc4random_uniform(UInt32(list.count - i))) + i
+            if( i != j) {
+                swap(&list[i], &list[j])
+            }
+        }
+        return list
     }
 }
 
-class StockPile : BasePile {
+class CardPile {
+    var cards:Array<Card> = []
+    
+    func first () -> Card {
+        return cards.first!
+    }
+    
+    func last () -> Card {
+        return cards.last!
+    }
+    
+    subscript(n:Int) -> CardPile {
+        get {
+            let p = CardPile()
+            
+            for card in self.cards[n...cards.count] {
+                p.cards.append(card)
+            }
+            cards.removeRange(n...cards.count)
+            return p
+            
+        }
+        set {
+            for card in newValue.cards {
+                cards.append(card)
+            }
+        }
+    }
+}
+
+class StockPile : CardPile {
     
 }
 
-class WastePile : BasePile {
-    
+class WastePile : CardPile {
+
 }
 
-class TableauPile : BasePile {
-    
+class TableauPile : CardPile, SolitaireCardPile {
+    func canAccept(pile: CardPile) -> Bool {
+        return pile.first().rank == last().rank + 1
+    }
 }
 
-class FoundationPile : BasePile {
+class FoundationPile : CardPile, SolitaireCardPile {
+    var suit:Card.Suit
     
+    init(suit:Card.Suit) {
+        self.suit = suit
+    }
+    
+    func canAccept(pile: CardPile) -> Bool {
+        return self.suit == pile.first().suit &&
+            pile.first().rank == last().rank + 1
+    }
 }

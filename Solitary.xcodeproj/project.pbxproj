@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B99A85B71C431BE9009E31E2 /* CardPileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99A85B61C431BE9009E31E2 /* CardPileView.swift */; };
 		B9A5074E1C3DBC8D0099BD50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A5074D1C3DBC8D0099BD50 /* AppDelegate.swift */; };
 		B9A507501C3DBC8D0099BD50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A5074F1C3DBC8D0099BD50 /* ViewController.swift */; };
 		B9A507531C3DBC8D0099BD50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9A507511C3DBC8D0099BD50 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B99A85B61C431BE9009E31E2 /* CardPileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPileView.swift; sourceTree = "<group>"; };
 		B9A5074A1C3DBC8D0099BD50 /* Solitary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solitary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9A5074D1C3DBC8D0099BD50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9A5074F1C3DBC8D0099BD50 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,13 +107,14 @@
 		B9A5074C1C3DBC8D0099BD50 /* Solitary */ = {
 			isa = PBXGroup;
 			children = (
-				B9A5074D1C3DBC8D0099BD50 /* AppDelegate.swift */,
-				B9A5074F1C3DBC8D0099BD50 /* ViewController.swift */,
 				B9A507511C3DBC8D0099BD50 /* Main.storyboard */,
-				B9A5077B1C3DBCA70099BD50 /* CardView.swift */,
+				B9A5074F1C3DBC8D0099BD50 /* ViewController.swift */,
 				B9A5077D1C3DBCEB0099BD50 /* BoardView.swift */,
 				B9A5077F1C3DBF950099BD50 /* Card.swift */,
+				B9A5077B1C3DBCA70099BD50 /* CardView.swift */,
 				B9A507811C3DBFD20099BD50 /* CardPile.swift */,
+				B99A85B61C431BE9009E31E2 /* CardPileView.swift */,
+				B9A5074D1C3DBC8D0099BD50 /* AppDelegate.swift */,
 				B9A507541C3DBC8D0099BD50 /* Assets.xcassets */,
 				B9A507561C3DBC8D0099BD50 /* LaunchScreen.storyboard */,
 				B9A507591C3DBC8D0099BD50 /* Info.plist */,
@@ -274,6 +277,7 @@
 				B9A507801C3DBF950099BD50 /* Card.swift in Sources */,
 				B9A5077C1C3DBCA70099BD50 /* CardView.swift in Sources */,
 				B9A5074E1C3DBC8D0099BD50 /* AppDelegate.swift in Sources */,
+				B99A85B71C431BE9009E31E2 /* CardPileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
